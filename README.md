@@ -1,70 +1,74 @@
 # Facial Emotion Detection 🎭
 
-A real-time Facial Emotion Detection System that integrates Haar Cascade for face detection and a Convolutional Neural Network (CNN) for emotion classification. The application processes live video streams or static images and classifies emotions such as Happy, Sad, and Neutral using Python, TensorFlow, and OpenCV.
+A real-time Facial Emotion Detection System built with Haar Cascade for face detection and a Convolutional Neural Network (CNN) for emotion classification. The system is deployed using Streamlit, allowing users to capture images via webcam or upload pictures, and classifies emotions such as Happy, Sad, and Neutral.
 
-##  🚀 Features
+## 🚀 Features
 
-Real-time face detection using Haar Cascade
+Real-time face detection using Haar Cascade.
 
-Emotion classification with CNN (Happy, Sad, Neutral)
+Emotion classification into Happy, Sad, and Neutral.
 
-Supports live video stream via webcam or static images
+Streamlit Web App with intuitive UI.
 
-Lightweight and efficient for real-time applications
+Two input modes:
 
-Built with Python, TensorFlow, and OpenCV
+📷 Capture image from webcam.
+
+⬆️ Upload an image from your device.
+
+Visual results with bounding boxes and emotion labels.
+
+📊 Emotion analysis summary with percentage distribution and bar chart.
 
 ## 📂 Dataset
 
-This project is trained on the FER-2013 dataset (Kaggle), which contains 35,000+ labeled grayscale images of size 48x48 pixels.
+This project is trained on the FER-2013 dataset (Kaggle), which contains over 35,000 labeled grayscale facial images of size 48x48 pixels.
 For this project, only 3 classes were used: Happy, Sad, and Neutral.
 
-## ⚙️ System Architecture
+📥 Dataset link: [Kaggle FER-2013](https://www.kaggle.com/datasets/deadskull7/fer2013)
 
-Face Detection – Haar Cascade detects the face from video frames/images.
+## ⚙️ System Workflow
 
-Preprocessing – Cropped faces are resized to 48x48 grayscale and normalized.
+Face Detection → Haar Cascade identifies faces in the frame.
 
-Emotion Classification – CNN model predicts the emotion label.
+Preprocessing → Faces are cropped, converted to grayscale, resized to 48×48, and normalized.
 
-Output – The detected emotion is displayed on screen in real-time.
+Emotion Classification → CNN model predicts the emotion.
+
+Results → Display emotion label on the face, along with an overall summary.
 
 ## 🧠 Model Details
 
-Input Shape: 48x48 grayscale images
+Input shape: 48×48 grayscale images.
 
-Layers:
+Architecture: Convolutional layers + MaxPooling → Flatten → Dense layers → Dropout → Softmax output.
 
-Conv2D + MaxPooling (feature extraction)
+Optimizer: Adam.
 
-Flatten + Dense layers
+Loss function: Categorical Crossentropy.
 
-Dropout to prevent overfitting
-
-Softmax output layer with 3 classes
-
-Optimizer: Adam
-
-Loss Function: Categorical Crossentropy
-
-Accuracy: ~85% on validation data
+Accuracy: ~85% on validation data.
 
 ## 💻 Tech Stack
 
-Programming Language: Python
+Language: Python
 
-Libraries/Frameworks: TensorFlow, Keras, OpenCV, NumPy
+Libraries: TensorFlow, Keras, OpenCV, NumPy, Streamlit, PIL
 
 Dataset: FER-2013 (Kaggle)
 
 ## 📈 Results
 
-Achieved ~85% accuracy on the validation dataset.
+Achieved ~85% accuracy on validation dataset.
 
-Real-time predictions with minimal lag.
+Real-time emotion classification with minimal latency.
 
-🔮 Future Enhancements
+Professional Streamlit web interface with side-by-side analysis.
 
-Add more emotion classes (Surprise, Fear, Disgust, Angry).
+## 🔮 Future Enhancements
 
-Improve accuracy using transfer learning (VGG16, MobileNet, EfficientNet).
+Extend classification to more emotions (Surprise, Fear, Disgust, Angry).
+
+Improve accuracy with Transfer Learning (VGG16, ResNet, MobileNet).
+
+Deploy as a cloud-hosted web application or Android app.
