@@ -6,8 +6,8 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 from tensorflow.keras.utils import to_categorical
 
 # Define paths
-train_dir = r'C:\Users\irfan\Desktop\New folder\FER-Project\FER-Project\cleaned_images\train'
-test_dir = r'C:\Users\irfan\Desktop\New folder\FER-Project\FER-Project\cleaned_images\test'
+train_dir = r'C:\Users\irfan\Desktop\Project\FER-Project\FER-Project\cleaned_images\train'
+test_dir = r'C:\Users\irfan\Desktop\Project\FER-Project\FER-Project\cleaned_images\test'
 
 # Define classes (folder names)
 classes = ['happy', 'sad', 'neutral']
@@ -62,7 +62,7 @@ model = Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Train model
-model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=20,batch_size=32)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10,batch_size=32)
 
 # Save model
 model.save('emotion_class.h5')
